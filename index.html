@@ -30,7 +30,18 @@
             height: 500px;
             padding: 20px 0;
             background-color: #b3c4ba;
-            display: flex;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 6px -6px rgb(104, 72, 72);
+        }
+        .intracker{
+            width: 80%;
+            height: 500px;
+            padding: 20px 0;
+            background-color: #b3c4ba;
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -81,9 +92,36 @@
         #Totaldeath{
             line-height: 7vh;
         }
+        .button1{
+            background-color: #4c66af;
+            border: none;
+            color: white;
+            text-transform: uppercase;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 25px;
+            border-radius: 8px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .button2{
+            background-color: #40aa49;
+            border: none;
+            color: white;
+            text-transform: uppercase;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 25px;
+            border-radius: 8px;
+            margin: 4px 2px;
+            cursor: pointer;
+            margin-left: 70px;
+        }
       
-        
-       
     </style>
    
 </head>
@@ -92,9 +130,12 @@
         <h3>CoronoStatics</h3>
 
     </header>
+    <h1 id="date" style="text-decoration: underline; text-align: center;background-color: #b3c4ba;">Date</h1>
     <section>
-        <div class="tracker">
-           <h1 id="date" style="text-decoration: underline;">Date</h1>
+       
+          
+           <button class="button1">Global</button>
+           <div class="tracker">
             <h1 id="Global" style="text-decoration: underline;">Global</h1>
             <h1 id="GCC">Total Confirmed Cases</h1>
            
@@ -102,16 +143,15 @@
             <h1 id="NewConfirmed"> NewConfirmed Cases</h1>
             
             <h1 id ="Newdeath">New Death</h1>
-            
-            
+            </div>
+            <button class="button2">India</button>
+           <div class="intracker">
             <h1 id="CountryIndia"  style="text-decoration: underline;">Country : India</h1>
             <h1 id="Confirmedcases"> Total confirmed Cases</h1>
             <h1 id="Recoveredcases"> Total Recovered Cases</h1>
            
                 <h1 id ="Totaldeath">Total Death</h1>
             </div>
-
-        
 
 
     </section>
@@ -141,6 +181,15 @@
            
             console.log(actualdata.Countries[76]);
         })
+        const global=document.querySelector('.tracker');
+        const button1=document.querySelector('.button1');
+        button1.addEventListener('click',function(){
+        global.classList.toggle('tracker')})
+
+        const mydata=document.querySelector('.intracker');
+        const button2=document.querySelector('.button2');
+        button2.addEventListener('click',function(){
+        mydata.classList.toggle('intracker')})
     </script>
 
 
